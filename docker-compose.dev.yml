@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # Neon Local Proxy Service
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: acquisitions-neon-local
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env.development
+    networks:
+      - acquisitions-dev-network
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-h', 'localhost', '-p', '5432', '-U', 'neon']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Main Application Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: acquisitions-app-dev
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env.development
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      neon-local:
+        condition: service_healthy
+    networks:
+      - acquisitions-dev-network
+    volumes:
+      # For development: enable hot reload by mounting source code
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json:ro
+      # Logs volume for debugging
+      - ./logs:/app/logs
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    command: ['npm', 'run', 'dev'] # Use development command with --watch
+
+  # Optional: Database administration tool
+  drizzle-studio:
+    image: node:18-alpine
+    container_name: acquisitions-db-studio
+    working_dir: /app
+    ports:
+      - '4983:4983'
+    env_file:
+      - .env.development
+    depends_on:
+      - neon-local
+      - app
+    networks:
+      - acquisitions-dev-network
+    volumes:
+      - .:/app
+    command: sh -c "npm install -g drizzle-kit && npx drizzle-kit studio --host 0.0.0.0"
+    profiles:
+      - tools # Only start with --profile tools
+
+networks:
+  acquisitions-dev-network:
+    driver: bridge
+    name: acquisitions-dev-network
+
+volumes:
+  logs:
+    driver: local
