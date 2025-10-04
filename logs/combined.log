@@ -31,3 +31,28 @@
 {"level":"info","message":"User Registered Successfully: karki@gmail.com","service":"acquisitions-api"}
 {"level":"info","message":"User Registered Successfully: karki@gmail.com","service":"acquisitions-api"}
 {"level":"info","message":"::1 - - [04/Oct/2025:05:30:42 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 120 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"level":"info","message":"User authenticated successfully: admin@test.com","service":"acquisitions-api"}
+{"level":"info","message":"User Signed In Successfully: admin@test.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [04/Oct/2025:05:57:15 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 112 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"level":"info","message":"User Signed Out Successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [04/Oct/2025:05:58:45 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"level":"info","message":"User Signed Out Successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [04/Oct/2025:05:59:11 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:34:41 +0000] \"GET /health HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:43:06 +0000] \"GET /health HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:43:08 +0000] \"GET /health HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:43:09 +0000] \"GET /health HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/health","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:43:10 +0000] \"GET /health HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/api/auth/sign-in","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:43:20 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/api/auth/sign-out","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:44:14 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/api/auth/sign-up","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:44:19 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
+{"ip":"::1","level":"warn","message":"Bot request blocked","path":"/api/auth/sign-up","service":"acquisitions-api","userAgent":"PostmanRuntime/7.48.0"}
+{"level":"info","message":"::1 - - [04/Oct/2025:06:44:24 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 403 69 \"-\" \"PostmanRuntime/7.48.0\"","service":"acquisitions-api"}
